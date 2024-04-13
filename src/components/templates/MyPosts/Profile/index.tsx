@@ -1,6 +1,7 @@
 import { LinkButton } from "@/components/atoms/LinkButton";
 import { GetMyProfileReturn } from "@/services/server/MyProfile";
 import { Accounts } from "./Accounts";
+import Image from 'next/image';
 import Star from "./assets/star.svg";
 import styles from "./styles.module.css";
 
@@ -16,7 +17,7 @@ export const Profile = (props: Props) => {
         <div className={styles.info}>
           <p className={styles.name}>{props.name}</p>
           <p className={styles.likes}>
-            <Star /> {props.likeCount}
+          <Image src={Star} alt="" /> {props.likeCount}
           </p>
           <p className={styles.bio}>{props.bio}</p>
           <LinkButton href={`/my/profile/edit`}>変更する</LinkButton>

@@ -1,8 +1,8 @@
 import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
 import { LoginUserInfoProviderDecorator, SPStory } from "@/tests/storybook";
-import { expect } from "@storybook/jest";
+import { expect } from "@storybook/test";
 import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
-import { userEvent as user, waitFor, within } from "@storybook/testing-library";
+import { userEvent as user, waitFor, within } from "@storybook/test";
 import { Header } from "./";
 
 export default {
@@ -105,8 +105,8 @@ export const PCLoggedInNotHaveOpenMenu: Story = {
       expect(
         canvas.queryByRole("button", {
           name: "メニューを開く",
-        })
-      ).toBeNull()
+        }),
+      ).toBeNull(),
     );
   },
 };

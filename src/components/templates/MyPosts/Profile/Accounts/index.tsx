@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import GitHub from "./assets/github.svg";
 import Twitter from "./assets/twitter.svg";
 import styles from "./styles.module.css";
@@ -17,7 +18,7 @@ export const Accounts = (props: Props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GitHub /> <span>{props.githubAccount}</span>
+          <Image src={GitHub} alt="" /> <span>{props.githubAccount}</span>
           </a>
         </p>
       )}
@@ -28,7 +29,7 @@ export const Accounts = (props: Props) => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Twitter /> <span>{props.twitterAccount}</span>
+            <Image src={Twitter} alt="" /> <span>{props.twitterAccount}</span>
           </a>
         </p>
       )}

@@ -9,6 +9,7 @@ import {
   UseFormRegister,
   UseFormSetValue,
 } from "react-hook-form";
+import Imgae from "next/image"
 import ImageIcon from "./assets/image.svg";
 import styles from "./styles.module.css";
 
@@ -40,7 +41,8 @@ export const PostFormHeroImage = (props: Props) => {
           theme: props.error ? "error" : "dark",
           children: (
             <>
-              <ImageIcon />
+              <Imgae src={ImageIcon} alt="" />
+              <p>svg icon</p>
               <br />
               {props.error ? (
                 <span>{props.error}</span>

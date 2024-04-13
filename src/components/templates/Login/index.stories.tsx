@@ -1,6 +1,6 @@
 import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
 import { BasicLayoutDecorator, PCStory, SPStory } from "@/tests/storybook";
-import { ComponentMeta, ComponentStoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import { Login } from "./";
 
 export default {
@@ -10,9 +10,9 @@ export default {
     msw: { handlers: [handleGetMyProfile({ status: 401 })] },
   },
   decorators: [BasicLayoutDecorator],
-} as ComponentMeta<typeof Login>;
+} as Meta<typeof Login>;
 
-type Story = ComponentStoryObj<typeof Login>;
+type Story = StoryObj<typeof Login>;
 
 export const Default: Story = { ...PCStory };
 

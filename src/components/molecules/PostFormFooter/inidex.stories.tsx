@@ -8,7 +8,7 @@ function TestComponent(
   props: Omit<
     ComponentPropsWithoutRef<typeof PostFormFooter>,
     "register" | "control"
-  >
+  >,
 ) {
   const { register, control } = useForm<PutInput>();
   return <PostFormFooter {...props} register={register} control={control} />;

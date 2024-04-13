@@ -1,4 +1,5 @@
 import { Err } from "@/lib/error";
+import Image from 'next/image';
 import Caution from "./assets/caution.svg";
 import styles from "./styles.module.css";
 
@@ -15,7 +16,7 @@ const messages = {
 export const Error = (props: Props) => {
   return (
     <div className={styles.module}>
-      <Caution />
+      <Image src={Caution} alt="" />
       <p>{messages[props.status].message}</p>
     </div>
   );

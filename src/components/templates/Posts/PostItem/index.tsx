@@ -1,6 +1,7 @@
 import { GetPostsReturn } from "@/services/server/Posts";
 import Link from "next/link";
 import { useId } from "react";
+import Image from 'next/image';
 import Like from "./assets/like.svg";
 import styles from "./styles.module.css";
 
@@ -20,7 +21,7 @@ export const PostItem = ({ post }: { post: GetPostsReturn["posts"][0] }) => {
             </div>
             <p className={styles.like}>
               {post.likeCount}
-              <Like />
+              <Image src={Like} alt="" />
             </p>
           </div>
         </a>
