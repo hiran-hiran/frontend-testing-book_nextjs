@@ -1,6 +1,6 @@
-import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
+import { handleGetMyProfile } from "../src/services/client/MyProfile/__mock__/msw";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
-import { initialize, mswDecorator } from "msw-storybook-addon";
+import { initialize, mswDecorator, mswLoader } from "msw-storybook-addon";
 import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
 import { withScreenshot } from "storycap";
 import  { Preview } from '@storybook/react';
@@ -22,9 +22,9 @@ const preview: Preview = {
     },
     msw: { handlers: [handleGetMyProfile()] },
     layout: "fullscreen",
-    decorators: [mswDecorator, withScreenshot]
-}
-
+    decorators: [mswDecorator, withScreenshot],
+},
+loaders: [mswLoader],
 };
 
 
