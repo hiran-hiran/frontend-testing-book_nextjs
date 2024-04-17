@@ -1,13 +1,13 @@
-import { handleGetMyProfile } from "../src/services/client/MyProfile/__mock__/msw";
 import { INITIAL_VIEWPORTS } from "@storybook/addon-viewport";
+import { Preview } from "@storybook/react";
 import { initialize, mswDecorator, mswLoader } from "msw-storybook-addon";
-import { RouterContext } from 'next/dist/shared/lib/router-context.shared-runtime';
+import { RouterContext } from "next/dist/shared/lib/router-context.shared-runtime";
 import { withScreenshot } from "storycap";
-import  { Preview } from '@storybook/react';
+import { handleGetMyProfile } from "../src/services/client/MyProfile/__mock__/msw";
 
 const preview: Preview = {
-  parameters:{
-    actions: { argTypesRegex: "^on[A-Z].*" },
+  parameters: {
+    actions: { argTypesRegex: "^on.*" },
     controls: {
       matchers: {
         color: /(background|color)$/i,
@@ -23,10 +23,9 @@ const preview: Preview = {
     msw: { handlers: [handleGetMyProfile()] },
     layout: "fullscreen",
     decorators: [mswDecorator, withScreenshot],
-},
-loaders: [mswLoader],
+  },
+  loaders: [mswLoader],
 };
-
 
 initialize();
 

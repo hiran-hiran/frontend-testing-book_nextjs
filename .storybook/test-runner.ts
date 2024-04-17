@@ -1,7 +1,9 @@
 const { getStoryContext } = require("@storybook/test-runner");
 const { injectAxe, checkA11y, configureAxe } = require("axe-playwright");
 
-module.exports = {
+import type { TestRunnerConfig } from "@storybook/test-runner";
+
+const config: TestRunnerConfig = {
   async preRender(page, context) {
     if (context.name.startsWith("SP")) {
       page.setViewportSize({ width: 375, height: 667 });
@@ -26,3 +28,5 @@ module.exports = {
     });
   },
 };
+
+export default config;

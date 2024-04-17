@@ -1,11 +1,11 @@
-import { StorybookConfig } from '@storybook/nextjs';
+import type { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
   staticDirs: ["../public"],
   framework: {
     name: "@storybook/nextjs",
-    options: {}
+    options: {},
   },
   addons: [
     "@storybook/addon-links",
@@ -13,7 +13,7 @@ const config: StorybookConfig = {
     "@storybook/addon-interactions",
     "@storybook/addon-a11y",
     "storycap",
-    "storybook-addon-next-router"
+    // "storybook-addon-next-router"
     // "@chromatic-com/storybook"
   ],
   previewHead: (head) => `

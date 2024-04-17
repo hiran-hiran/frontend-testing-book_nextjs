@@ -1,8 +1,7 @@
 import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
 import { LoginUserInfoProviderDecorator, SPStory } from "@/tests/storybook";
-import { expect } from "@storybook/test";
 import { Meta, StoryObj } from "@storybook/react";
-import { userEvent as user, waitFor, within } from "@storybook/test";
+import { expect, userEvent as user, waitFor, within } from "@storybook/test";
 import { Header } from "./";
 
 export default {
@@ -22,7 +21,16 @@ export const LoggedIn: Story = {};
 
 export const RouteMyPosts: Story = {
   parameters: {
-    nextRouter: { pathname: "/my/posts" },
+    // nextRouter: { pathname: "/my/posts" },
+    nextjs: {
+      router: {
+        pathname: "/my/posts",
+        // asPath: '/profile/1',
+        // query: {
+        //   id: '1',
+        // },
+      },
+    },
   },
 };
 
@@ -105,8 +113,8 @@ export const PCLoggedInNotHaveOpenMenu: Story = {
       expect(
         canvas.queryByRole("button", {
           name: "メニューを開く",
-        }),
-      ).toBeNull(),
+        })
+      ).toBeNull()
     );
   },
 };
