@@ -1,13 +1,15 @@
 import { handleGetMyProfile } from "@/services/client/MyProfile/__mock__/msw";
 import { LoginUserInfoProviderDecorator, SPStory } from "@/tests/storybook";
 import { Meta, StoryObj } from "@storybook/react";
-import { expect, userEvent as user, waitFor, within } from "@storybook/test";
+import { expect, within } from "@storybook/test";
 import { Header } from "./";
 
-export default {
+const meta = {
   component: Header,
   decorators: [LoginUserInfoProviderDecorator],
-} as Meta<typeof Header>;
+} satisfies Meta<typeof Header>;
+
+export default meta;
 
 type Story = StoryObj<typeof Header>;
 
